@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hari Venkat | CSE-AIML Student</title>
+
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #101419;
+    color: #eeeeee;
+    line-height: 1.6;
+}
+
+
+/* Navigation */
+
+header {
+    background-color: #101419;
+    border-bottom: 1px solid #29313a;
+}
+
+.navbar {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 28px;
+}
+
+.logo span {
+    color: #65d5f5;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.navbar a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.navbar a:hover {
+    color: #65d5f5;
+}
+
+
+/* Home */
+
+.home {
+    max-width: 1100px;
+    min-height: 90vh;
+    margin: auto;
+    padding: 70px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.home-text {
+    max-width: 600px;
+}
+
+.home-text > p:first-child {
+    color: #65d5f5;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.home-text h1 {
+    font-size: 65px;
+    margin-bottom: 10px;
+}
+
+.home-text h2 {
+    font-size: 25px;
+    color: #c5cbd1;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.home-text p {
+    color: #9da5ad;
+    max-width: 550px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.buttons a {
+    text-decoration: none;
+    padding: 11px 20px;
+    border: 1px solid #65d5f5;
+    color: #65d5f5;
+}
+
+.buttons a:first-child {
+    background-color: #65d5f5;
+    color: #101419;
+}
+
+.home-photo {
+    width: 330px;
+}
+
+.home-photo img {
+    width: 330px;
+    height: 390px;
+    object-fit: cover;
+    border: 1px solid #39434d;
+    padding: 8px;
+}
+
+
+/* Common Sections */
+
+.section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 90px 20px;
+}
+
+.title {
+    font-size: 38px;
+    margin-bottom: 45px;
+}
+
+.title::after {
+    content: "";
+    display: block;
+    width: 45px;
+    height: 3px;
+    background-color: #65d5f5;
+    margin-top: 10px;
+}
+
+
+/* About */
+
+.about {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+}
+
+.about p {
+    color: #9da5ad;
+    margin-bottom: 18px;
+}
+
+.about-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.about-info div {
+    background-color: #171d23;
+    border: 1px solid #29313a;
+    padding: 25px;
+}
+
+.about-info h3 {
+    color: #65d5f5;
+    font-size: 25px;
+}
+
+.about-info p {
+    color: white;
+    margin: 5px 0;
+}
+
+.about-info small {
+    color: #7f8992;
+}
+
+
+/* Skills */
+
+.skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.skill {
+    background-color: #171d23;
+    border: 1px solid #29313a;
+    padding: 25px;
+}
+
+.skill h3 {
+    color: #65d5f5;
+    margin-bottom: 10px;
+}
+
+.skill p {
+    color: #929ba4;
+    font-size: 14px;
+}
+
+
+/* Projects */
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.project {
+    background-color: #171d23;
+    border: 1px solid #29313a;
+    padding: 25px;
+    min-height: 280px;
+}
+
+.project > span {
+    color: #65d5f5;
+    font-size: 13px;
+}
+
+.project h3 {
+    margin: 35px 0 15px;
+}
+
+.project p {
+    color: #929ba4;
+    font-size: 14px;
+}
+
+.project .technology {
+    color: #65d5f5;
+    margin-top: 20px;
+}
+
+
+/* Education */
+
+.education {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.education-box {
+    background-color: #171d23;
+    border-left: 3px solid #65d5f5;
+    padding: 30px;
+}
+
+.year {
+    color: #65d5f5;
+    font-size: 13px;
+}
+
+.education-box h3 {
+    margin: 12px 0 5px;
+}
+
+.education-box h4 {
+    color: #c5cbd1;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.education-box p:last-child {
+    color: #929ba4;
+}
+
+
+/* Hobbies */
+
+.hobbies {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.hobbies div {
+    background-color: #171d23;
+    border: 1px solid #29313a;
+    padding: 25px;
+}
+
+.hobbies h3 {
+    color: #65d5f5;
+    margin-bottom: 10px;
+}
+
+.hobbies p {
+    color: #929ba4;
+    font-size: 14px;
+}
+
+
+/* Achievements */
+
+.achievements {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.achievements div {
+    background-color: #171d23;
+    border: 1px solid #29313a;
+    padding: 25px;
+}
+
+.achievements h3 {
+    margin-bottom: 10px;
+}
+
+.achievements p {
+    color: #929ba4;
+    font-size: 14px;
+}
+
+
+/* Resume */
+
+.resume {
+    max-width: 1060px;
+    margin: 20px auto 90px;
+    padding: 40px;
+
+    background-color: #171d23;
+    border: 1px solid #29313a;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.resume p {
+    color: #929ba4;
+    margin-top: 8px;
+}
+
+.resume a {
+    background-color: #65d5f5;
+    color: #101419;
+    padding: 12px 22px;
+    text-decoration: none;
+}
+
+
+/* Contact */
+
+.contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+}
+
+.contact-text h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.contact-text p {
+    color: #929ba4;
+    margin-bottom: 15px;
+}
+
+.social {
+    display: flex;
+    flex-direction: column;
+}
+
+.social a {
+    color: #eeeeee;
+    text-decoration: none;
+    padding: 18px 0;
+    border-bottom: 1px solid #29313a;
+}
+
+.social a:hover {
+    color: #65d5f5;
+}
+
+
+/* Footer */
+
+footer {
+    border-top: 1px solid #29313a;
+    text-align: center;
+    padding: 25px;
+    color: #727c85;
+    font-size: 13px;
+}
+
+</style>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+
+            <h2 class="logo">Hari<span>.</span></h2>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- Home -->
+    <section class="home" id="home">
+
+        <div class="home-text">
+
+            <p>Hello, I'm</p>
+
+            <h1>Hari Venkat</h1>
+
+            <h2>CSE - AI & ML Student</h2>
+
+            <p>
+                I am a first-year CSE-AIML student interested in
+                Python, Web Development and Artificial Intelligence.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects">My Projects</a>
+                <a href="#contact">Contact Me</a>
+            </div>
+
+        </div>
+
+
+        <div class="home-photo">
+
+            <img src="myphoto.jpg" alt="Hari Venkat">
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section class="section" id="about">
+
+        <h2 class="title">About Me</h2>
+
+        <div class="about">
+
+            <div>
+                <p>
+                    I am a first-year Computer Science and Engineering
+                    student specializing in Artificial Intelligence and
+                    Machine Learning.
+                </p>
+
+                <p>
+                    I have been learning Python and Web Development
+                    for around 4 months. I started with programming
+                    basics and gradually started creating simple
+                    websites using HTML and CSS.
+                </p>
+
+                <p>
+                    I am interested in learning new technologies,
+                    improving my coding skills and understanding
+                    Artificial Intelligence.
+                </p>
+            </div>
+
+            <div class="about-info">
+
+                <div>
+                    <h3>01</h3>
+                    <p>First Year</p>
+                    <small>CSE-AIML</small>
+                </div>
+
+                <div>
+                    <h3>04+</h3>
+                    <p>Months</p>
+                    <small>Learning</small>
+                </div>
+
+                <div>
+                    <h3>04</h3>
+                    <p>Skills</p>
+                    <small>Python • HTML • CSS • AI</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+
+        <h2 class="title">My Skills</h2>
+
+        <div class="skills">
+
+            <div class="skill">
+                <h3>Python</h3>
+                <p>
+                    Python basics, loops, conditions, functions,
+                    lists, tuples and problem solving.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>HTML</h3>
+                <p>
+                    Creating webpages using headings, sections,
+                    links, tables, forms and semantic elements.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>CSS</h3>
+                <p>
+                    Working with colors, layouts, flexbox,
+                    responsive design and website styling.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>AI / ML</h3>
+                <p>
+                    Basic understanding of Artificial Intelligence,
+                    Machine Learning and Generative AI.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+
+        <h2 class="title">My Projects</h2>
+
+        <div class="projects">
+
+            <div class="project">
+
+                <span>01</span>
+
+                <h3>Personal Portfolio</h3>
+
+                <p>
+                    A simple personal portfolio website created
+                    using HTML and CSS to display my profile,
+                    skills and projects.
+                </p>
+
+                <p class="technology">
+                    HTML | CSS
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <span>02</span>
+
+                <h3>Online Learning Platform</h3>
+
+                <p>
+                    A simple educational website interface with
+                    course cards, instructors and learning content.
+                </p>
+
+                <p class="technology">
+                    HTML | CSS
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <span>03</span>
+
+                <h3>Python Programs</h3>
+
+                <p>
+                    A collection of small Python programs created
+                    while learning programming fundamentals.
+                </p>
+
+                <p class="technology">
+                    Python
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Education -->
+    <section class="section" id="education">
+
+        <h2 class="title">Education</h2>
+
+        <div class="education">
+
+            <div class="education-box">
+
+                <p class="year">2026 - Present</p>
+
+                <h3>B.Tech - CSE (AI & ML)</h3>
+
+                <h4>Dr. RVR & NRI University</h4>
+
+                <p>
+                    Currently pursuing my first year of
+                    Computer Science and Engineering with
+                    specialization in Artificial Intelligence
+                    and Machine Learning.
+                </p>
+
+            </div>
+
+
+            <div class="education-box">
+
+                <p class="year">Completed</p>
+
+                <h3>Higher Secondary Education</h3>
+
+                <p>
+                    Completed my previous education and
+                    started my journey into Computer Science
+                    and technology.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Hobbies -->
+    <section class="section">
+
+        <h2 class="title">My Hobbies</h2>
+
+        <div class="hobbies">
+
+            <div>
+                <h3>Web Designing</h3>
+                <p>Creating and trying different website designs.</p>
+            </div>
+
+            <div>
+                <h3>Learning Technology</h3>
+                <p>Learning new programming concepts and tools.</p>
+            </div>
+
+            <div>
+                <h3>Problem Solving</h3>
+                <p>Practicing Python programs and logical problems.</p>
+            </div>
+
+            <div>
+                <h3>Exploring AI</h3>
+                <p>Learning about AI and Generative AI tools.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Achievements -->
+    <section class="section">
+
+        <h2 class="title">Achievements & Goals</h2>
+
+        <div class="achievements">
+
+            <div>
+                <h3>Python Fundamentals</h3>
+                <p>
+                    Built a basic foundation in Python through
+                    regular practice.
+                </p>
+            </div>
+
+            <div>
+                <h3>Web Development</h3>
+                <p>
+                    Started creating webpages using HTML and CSS.
+                </p>
+            </div>
+
+            <div>
+                <h3>Learning AI</h3>
+                <p>
+                    Started exploring Artificial Intelligence
+                    and Generative AI.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Resume -->
+    <section class="resume">
+
+        <div>
+            <h2>My Resume</h2>
+
+            <p>
+                You can view my resume to know more about
+                my education, skills and projects.
+            </p>
+        </div>
+
+        <a href="resume.pdf" target="_blank">
+            View Resume
+        </a>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+
+        <h2 class="title">Contact Me</h2>
+
+        <div class="contact">
+
+            <div class="contact-text">
+
+                <h3>Let's Connect</h3>
+
+                <p>
+                    I am always interested in learning new
+                    things and connecting with people who are
+                    interested in technology.
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    yourmail@gmail.com
+                </p>
+
+                <p>
+                    <strong>Location:</strong>
+                    Andhra Pradesh, India
+                </p>
+
+            </div>
+
+
+            <div class="social">
+
+                <a href="https://github.com/Harivenkat-cpu" target="_blank">
+                    GitHub
+                </a>
+
+                <a href="https://www.linkedin.com/in/hari-venkat-512079412?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank">
+                    LinkedIn
+                </a>
+                
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Hari Venkat | CSE-AIML Student
+        </p>
+
+    </footer>
+
+</body>
+</html>
